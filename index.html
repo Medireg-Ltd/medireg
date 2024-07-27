@@ -1,24 +1,241 @@
-<html>
-    <head>
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3BSXMNK59P"></script>
-        <script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Carousel</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3BSXMNK59P"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-3BSXMNK59P');
-        </script>
-    </head>
-    <body>
-        <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
-        padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-        border-radius: 8px; will-change: transform;">
-        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGL4XDky6E&#x2F;hD0l8Hi7o54RZRYc9IxF_Q&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-        </iframe>
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .section {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .section.active {
+            display: block;
+        }
+
+        .navbar-nav {
+            align-items: center;
+        }
+        .navbar-custom {
+            background-color: rgb(140, 82, 255);
+        }
+        .navbar-brand img {
+            width: 20%;
+        }
+
+        .nav-link {
+            font-size: large;
+            color: white;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+            border: 5px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%);
+        }
+
+        .control-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        .control-buttons button {
+            background-color: rgba(0, 0, 0, 1);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .control-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .carousel-caption {
+            background-color: rgba(140, 82, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .section-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <a class="navbar-brand" href="#">
+            <img src="images/medireg_logo.jpg" alt="Medireg Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" style="padding-right: 10%;" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('aboutUs')">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('features')">Features</a>
+                </li>
+            </ul>
         </div>
-        <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGL4XDky6E&#x2F;hD0l8Hi7o54RZRYc9IxF_Q&#x2F;view?utm_content=DAGL4XDky6E&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Medireg</a> by Rudra Desai
-    </body>
+    </nav>
+
+    <div class="section-container">
+        <div id="aboutUs" class="section active" style="padding-left: 1%; padding-right: 1%;">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+                padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+                border-radius: 8px; will-change: transform;">
+                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                    src="https://www.canva.com/design/DAGL4XDky6E/hD0l8Hi7o54RZRYc9IxF_Q/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
+            </div>
+        </div>
+        <div id="features" class="section" style="padding: 2%;">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/udi_mgmt.jpeg" style="padding-bottom: 120px;" class="d-block w-100" alt="UDI Management">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>SKU-level registration and UDI management</h4>
+                            <p>Collect, organize, and manage all regulatory information at the individual product level</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/dashboard.jpg" class="d-block w-100" alt="Dashboards and reporting">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>Dashboards and reporting</h4>
+                            <p>Create self-service application, product, and country reports to see exactly where your
+                                products can be sold and their current registration status</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/govt_temp.jpeg" class="d-block w-100"
+                            alt="Government templates and entrance requirements">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>Government templates and entrance requirements</h4>
+                            <p>Use regulatory intelligence and digital templates to guide regulatory strategy and streamline
+                                submissions</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/smart_author.jpg" class="d-block w-100" alt="Smart Author system">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>Smart submission authoring</h4>
+                            <p>Streamline regulatory submissions with collaborative authoring, intelligent reusable content,
+                                and compliant PDF generation</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/gspr.jpeg" class="d-block w-100" alt="GSPR maintenance system">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>GSPR table creation and maintenance</h4>
+                            <p>Digitally collect and maintain evidence of compliance. Link to relevant standards and get
+                                notified of changes</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/approval.jpeg" class="d-block w-100" alt="Approval workflows">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>Approval workflows</h4>
+                            <p>Route approvals, assign tasks, and share notes across teams inside and outside of your
+                                organization</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/standards-library.jpeg" class="d-block w-100" alt="Standards Library">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>Regulations and standards tracking</h4>
+                            <p>Get notified of changing standards, laws, regulations, and guidance documents that impact
+                                your products</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/integration.jpeg" class="d-block w-100" alt="PLM, QMS, ERP, and CRM integration">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>PLM, QMS, ERP, and CRM integration</h4>
+                            <p>Seamlessly transfer data and documents across all of your systems, and link selling status
+                                directly to your ERP/CRM</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Initialize to show the default section
+        showSection('aboutUs');
+    </script>
+</body>
+
 </html>
