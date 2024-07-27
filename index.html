@@ -19,92 +19,111 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .section {
-            width: 100%;
-            height: 100%;
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
-        .section.active {
-            display: block;
-        }
-
-        .navbar-nav {
-            align-items: center;
-        }
-        .navbar-custom {
-            background-color: rgb(140, 82, 255);
-        }
-        .navbar-brand img {
-            width: 20%;
-        }
-
-        .nav-link {
-            font-size: large;
-            color: white;
-        }
-        
-        .carousel-item img {
-            width: 100%;
-            height: 800px;
-            object-fit: cover;
-            border: 5px solid #ccc;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            filter: invert(100%);
-        }
-
-        .control-buttons {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-        }
-
-        .control-buttons button {
-            background-color: rgba(0, 0, 0, 1);
-            border: none;
-            color: white;
-            border-radius: 50%;
-            padding: 10px;
-            margin: 5px;
-            cursor: pointer;
-        }
-
-        .control-buttons button:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .carousel-caption {
-            background-color: rgba(140, 82, 255, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-        }
-
-        .section-container {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-    </style>
+        <style>
+            .section {
+                width: 100%;
+                height: auto; /* Changed from 100% to auto for better responsiveness */
+                display: none;
+                position: relative; /* Changed from absolute to relative for better responsiveness */
+            }
+    
+            .section.active {
+                display: block;
+            }
+    
+            .navbar-nav {
+                align-items: center;
+            }
+            .navbar-custom {
+                background-color: rgb(140, 82, 255);
+            }
+            .navbar-brand img {
+                width: 50%; /* Increased size for better visibility on smaller screens */
+                max-width: 150px; /* Added max-width for better scaling */
+            }
+    
+            .nav-link {
+                font-size: 1rem; /* Adjusted font-size for better readability on mobile */
+                color: white;
+            }
+            
+            .carousel-item img {
+                width: 100%;
+                height: auto; /* Changed from 800px to auto for responsive height */
+                object-fit: cover;
+                border: 5px solid #ccc;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+    
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                filter: invert(100%);
+            }
+    
+            .control-buttons {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 10;
+            }
+    
+            .control-buttons button {
+                background-color: rgba(0, 0, 0, 1);
+                border: none;
+                color: white;
+                border-radius: 50%;
+                padding: 10px;
+                margin: 5px;
+                cursor: pointer;
+            }
+    
+            .control-buttons button:hover {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+    
+            .carousel-caption {
+                background-color: rgba(140, 82, 255, 0.7);
+                padding: 10px;
+                border-radius: 5px;
+                color: white;
+                font-weight: bold;
+                font-size: 1rem; /* Adjusted font-size for readability */
+            }
+    
+            .section-container {
+                width: 100%;
+                height: auto; /* Changed from 100vh to auto for better responsiveness */
+                overflow: hidden;
+                position: relative;
+                padding: 0 15px; /* Added padding for better spacing */
+            }
+    
+            @media (max-width: 768px) {
+                .navbar-toggler {
+                    margin-right: 0;
+                }
+    
+                .navbar-nav {
+                    text-align: center;
+                }
+    
+                .carousel-caption {
+                    font-size: 0.8rem; /* Adjusted font-size for smaller screens */
+                }
+    
+                .carousel-item img {
+                    height: auto; /* Ensuring images fit well on smaller screens */
+                }
+            }
+        </style>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <a class="navbar-brand" href="#">
-            <img src="medireg_logo.jpg" alt="Medireg Logo">
+            <img src="medireg_logo.jpg" style="width: 100%;" alt="Medireg Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -131,7 +150,7 @@
                 </iframe>
             </div>
         </div>
-        <div id="features" class="section" style="padding: 2%;">
+        <div id="features" class="section" style="padding-top: 1vh;">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
@@ -146,7 +165,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="udi_mgmt.jpeg" style="padding-bottom: 120px;" class="d-block w-100" alt="UDI Management">
+                        <img src="udi_mgmt.jpeg" class="d-block w-100" alt="UDI Management">
                         <div class="carousel-caption d-none d-md-block">
                             <h4>SKU-level registration and UDI management</h4>
                             <p>Collect, organize, and manage all regulatory information at the individual product level</p>
