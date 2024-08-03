@@ -6,7 +6,6 @@ footer {
     background: linear-gradient(to right, #24023b, #31084c); 
     color: #fff;
     padding: 70px  0  30px;
-    font-size: 13px;
     line-height: 20px;
 }
 
@@ -270,7 +269,7 @@ form button .fas{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #955EFC 20%, #f1f4fd 20%);
+    background: linear-gradient(to right, #955EFC 15%, #ecf4fd 15%);
     padding: 50px 0;
     width: 100%;
     overflow: hidden;
@@ -280,7 +279,6 @@ form button .fas{
   display: flex;
   /* max-width: 1300px; */
   margin: 0 50px;
-  background: #f1f4fd;
   border-radius: 10px;
   overflow: hidden;
   width: 100%;
@@ -369,13 +367,12 @@ form button .fas{
 /* Landing page ------------------------------------------------ */
 
 .medireg-section {
-    font-family: Arial, sans-serif;
     background-color: #ECF5FE;
     padding: 60px 20px;
     position: relative;
     overflow: hidden;
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
   }
   
   .content-wrapper {
@@ -484,14 +481,14 @@ form button .fas{
   }
   
   .institute-logo {
-    width: 119px;
-    height: 143px;
+    width: 100px;
+    height: auto;
     margin-right: 20px;
   }
   
   .india-map {
-    width: 119px;
-    height: 143px;
+    width: 127px;
+    height: auto;
     fill: #6f42c1;
     margin-top: 36px;
   }
@@ -506,11 +503,6 @@ form button .fas{
 
 
   /* Contact Us Form  start  */
-
-/* .contact_us_2 * {
-    font-family: Nunito, sans-serif;
-  } */
-  
   .contact_us_2 .text-blk {
     margin-top: 0px;
     margin-right: 0px;
