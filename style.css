@@ -29,7 +29,7 @@ footer {
 }
 
 .logo {
-  width: 30vw;
+  width: 100%;
   max-width: 300px;
   margin-bottom: 30px;
 }
@@ -555,7 +555,6 @@ form button .fas {
   justify-content: flex-start;
   margin-top: 0px;
   margin-right: auto;
-  margin-bottom: 50px;
   margin-left: auto;
   padding-top: 0px;
   padding-right: 0px;
