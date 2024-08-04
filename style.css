@@ -387,7 +387,6 @@ form button .fas {
   position: relative;
   z-index: 2;
   margin-top: 200px;
-  margin-left: 115px;
 
 }
 
@@ -425,14 +424,14 @@ form button .fas {
 }
 
 .main-heading {
-  font-size: 3rem;
+  font-size: 3.4vw;
   font-weight: bolder;
   color: #333;
   margin-bottom: 15px;
 }
 
 .subheading {
-  font-size: 29px;
+  font-size: 1.9vw;
   color: #4c4c4c;
 }
 
@@ -1137,12 +1136,6 @@ body {
     font-size: 1.2rem;
   }
 
-  .medireg-section .bottom-logos img {
-    width: 70%;
-    height: 34%;
-    max-width: 10vh;
-  }
-
   .medireg-section .bottom-logos {
     right: 95px;
   }
@@ -1364,6 +1357,15 @@ body {
       width: 100%;
       padding-left: 0 !important;
       padding-right: 0 !important;
+    }
+
+    .india-map {
+      width: 90px;
+      margin-top: 23px;
+    }
+
+    .institute-logo {
+      width: 70px;
     }
   }
 
