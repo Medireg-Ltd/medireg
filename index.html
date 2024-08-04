@@ -28,157 +28,6 @@
 
 
     <link rel="stylesheet" href="style.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Rubik', sans-serif;
-        }
-
-
-        /* =========== Main pages CSS =========== */
-        .section {
-            display: none;
-            width: 100%;
-            height: auto;
-            /* Changed from 100% to auto for better responsiveness */
-            display: none;
-            position: relative;
-            /* Changed from absolute to relative for better responsiveness */
-            margin: 0;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .section-container {
-            width: 100%;
-            height: auto;
-            /* Changed from 100vh to auto for better responsiveness */
-            overflow: hidden;
-            position: relative;
-        }
-
-        .container-fluid {
-            padding: 0;
-        }
-
-        .img-fluid {
-            width: 100%;
-            height: 10%;
-        }
-
-        /* =========== Navbar CSS =========== */
-        
-        .navbar-nav {
-            align-items: center;
-        }
-
-        .navbar-custom {
-            background-color: rgb(140, 82, 255);
-        }
-
-        .navbar-brand img {
-            width: 50%;
-            /* Increased size for better visibility on smaller screens */
-            max-width: 165px;
-            /* Added max-width for better scaling */
-        }
-
-        .nav-link {
-            font-size: 1rem;
-            /* Adjusted font-size for better readability on mobile */
-            color: white !important;
-            transition: transform 0.4s ease, color 0.3s ease;
-            font-family: 'Open Sans';
-        }
-
-        .nav-link:hover {
-            color: rgb(163, 163, 163) !important;
-            transform: scale(1.1);
-        }
-
-        .nav-link.active {
-            color: rgb(163, 163, 163) !important;
-        }
-
-        /* =========== Carousel CSS =========== */
-
-        .card-header {
-            background-color: rgb(140, 82, 255);
-        }
-
-        .btn-link {
-            color: white;
-        }
-
-        .card-body {
-            background-color: #ECF4FD;
-        }
-
-        .image-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .image-container img {
-            width: 90%;
-            height: auto;
-            /* Changed from 800px to auto for responsive height */
-            object-fit: cover;
-            border: 5px solid #ccc;
-            border-radius: 10px;
-        }
-
-        .image-container p {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        /* ============ Contact Form CSS =============== */
-        .contact-form {
-            background: #fff;
-            padding: 1vh;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 50px auto;
-        }
-
-        .contact-form h2 {
-            margin-bottom: 30px;
-        }
-
-        .form-control:focus {
-            box-shadow: none;
-            border-color: #007bff;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        /* Responsive layout adjustments */
-        /* Ensure the image-container is responsive on smaller screens */
-        @media (max-width: 768px) {
-            .image-container {
-                margin-top: 1rem;
-                /* Space above the image-container on smaller screens */
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -224,9 +73,7 @@
                     <div class="decoration right-cylinder"></div>
                     <div class="decoration right-cylinder-2"></div>
                     <div class="content-wrapper">
-                        <div class="col">
-                            <img src="./img/medireg_logo.jpg" alt="" class="logo" style="width: 350px;">
-                        </div>
+                        <img src="./img/medireg_logo.jpg" alt="" class="logo">
                         <h1 class="main-heading">Simple. Smart. Secure.</h1>
                         <p class="subheading">Revolutionising paperwork by making it paper-free</p>
                     </div>
@@ -336,6 +183,7 @@
                                 <h2 class="text-blk contactus-head" style="margin-bottom: 12px;">
                                     Get in Touch
                                 </h2>
+                                <p>We'd love to hear from you! Please fill out the form below and we'll get back to you shortly.</p>
                                 <div class="social-icons">
                                     <a href="https://www.linkedin.com/in/rudradesai/"><i class="fab fa-linkedin-in"></i></a>
                                     <a href="https://wa.me/447767954605"><i class="fab fa-whatsapp"></i></a>
@@ -412,7 +260,7 @@
             <div class="decoration right-cylinder"></div>
             <div class="decoration right-cylinder-2"></div>
 
-            <div class="container-fluid">
+            <div class="container-fluid platform_display">
                 <div class="row p-5">
                     <div class="col text-center">
                         <h1>Our Platform</h1>
@@ -447,7 +295,7 @@
                                     <button class="btn btn-link btn-block text-left" type="button"
                                         data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                         aria-controls="collapseOne">
-                                        SKU-level registration and UDI management
+                                        SKU and UDI management
                                     </button>
                                 </h2>
                             </div>
@@ -485,7 +333,7 @@
                                     <button class="btn btn-link btn-block text-left collapsed" type="button"
                                         data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        Government templates and entrance requirements
+                                        Country-specific entrance requirements
                                     </button>
                                 </h2>
                             </div>
@@ -603,7 +451,7 @@
 
     <footer>
         <div class="row">
-            <div class="col-lg-3 mb-5">
+            <div class="col-lg-3 footercols">
                 <img src="./img/medireg_logo.jpg" alt="" class="logo">
                 <p class="py-2">
                     A single platform for end-to-end regulatory process digitization and
@@ -613,7 +461,7 @@
                         style="text-decoration: none; color: white;">Contact Us</a></button>
             </div>
 
-            <div class="col-lg-3 mb-5 pl-5">
+            <div class="col-lg-3 footercols">
                 <h3>Office </h3>
                 <ul style="padding: 0;">
                     <li>Ahmedabad, India</a></li>
@@ -621,7 +469,7 @@
                     <li><a href="tel:+447767954605" class="email-id">+447767954605</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 mb-5 pl-5">
+            <div class="col-lg-3 footercols">
                 <h3>Quick Links</h3>
                 <ul style="padding: 0;">
                     <li><a href="#" onclick="showSection('home', this)">Home</a></li>
@@ -631,7 +479,7 @@
                     <li><a href="#" onclick="showSection('contactUs', this)">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 mb-5">
+            <div class="col-lg-3 footercols">
                 <h3>Newsletter</h3>
                 <form id="form1" action="https://formspree.io/f/xovaeyzo" method="POST">
                     <i class="fa-regular fa-envelope"></i>
@@ -639,11 +487,9 @@
                     <button type="submit"><i class="fas fa-arrow-right"></i></button>
                 </form>
                 <div class="social-icons">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-x-twitter"></i>
+                    <a href="https://www.linkedin.com/in/rudradesai/"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://wa.me/447767954605"><i class="fab fa-whatsapp"></i></a>
-                    <i class="fab fa-instagram"></i>
-
+                    <a href="mailto:founder@medireg.in" style="color: #000000; display: inline;background: white; border-radius: 100px; padding: 11px;width: 40px;height: 40px;"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </div>
