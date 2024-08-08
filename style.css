@@ -1143,16 +1143,19 @@ body {
     flex-direction: column;
     text-align: center;
   }
+
   .why-choose-us .image-section,
   .why-choose-us .text-section {
     width: 100%;
     max-width: 100%;
     padding: 10px;
   }
+
   .why-choose-us .image-section img {
     width: 80%;
     max-width: 250px;
   }
+
   .why-choose-us h2,
   .why-choose-us h3 {
     font-size: 1.5rem;
@@ -1168,6 +1171,7 @@ body {
   .features-section .features-grid {
     display: block;
   }
+
   .features-section .feature-item {
     width: 100%;
     margin-bottom: 20px;
