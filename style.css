@@ -1603,14 +1603,6 @@ body {
   margin-bottom: 40px;
 }
 
-.content-wrapperab {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .profile-card {
   background-color: white;
   padding: 30px;
@@ -1622,19 +1614,12 @@ body {
 
 }
 
-.profile-card:hover {
-  transform: translateY(-20px);
-  cursor: pointer;
-}
-
 .profile-imageab {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-
-
 }
 
 
@@ -1807,6 +1792,23 @@ body {
   font-size: 22px;
 }
 
+.founder-sectionab .mission_heading, .founder-sectionab .mission_head_para {
+  text-align: center;
+}
+
+.profile-card, .bio {
+  margin: 0 10px;
+  margin-top: 50px;
+  height: 45vh;
+  max-height: 500px;
+  
+}
+
+.analytics-dashboard i {
+  color: var(--primary-purple);
+  margin: 30px 0;
+}
+
 @media (max-width: 767px) {
   .mission_heading {
     font-size: 1.6rem;
@@ -1818,7 +1820,7 @@ body {
   }
 
   .mission_para {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .titleab {
@@ -1867,4 +1869,7 @@ body {
     font-size: 1.2rem;
   }
   
+  .founder-sectionab {
+    padding-bottom: 200px;
+  }
 }
