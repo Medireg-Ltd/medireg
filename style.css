@@ -1624,14 +1624,12 @@ body {
 
 
 .nameab {
-  font-size: 1.5vw;
   margin-bottom: 5px;
   font-weight: 700;
 }
 
 .roleab {
   color: #6200ee;
-  font-size: 1vw;
   margin-bottom: 15px;
 }
 
@@ -1799,11 +1797,10 @@ body {
 .profile-card, .bio {
   margin: 0 10px;
   margin-top: 50px;
-  height: 45vh;
+  height: 47vh;
   max-height: 500px;
   
 }
-
 .analytics-dashboard i {
   color: var(--primary-purple);
   margin: 30px 0;
@@ -1833,6 +1830,8 @@ body {
 
   .why-choose-us .mission_heading {
     font-size: 1.4rem;
+    letter-spacing: 4px;
+    text-align: center;
   }
 
   .why-choose-us .mission_head_para {
@@ -1871,5 +1870,9 @@ body {
   
   .founder-sectionab {
     padding-bottom: 200px;
+  }
+
+  .content-wrapperab {
+    margin: 0 -40px;
   }
 }
